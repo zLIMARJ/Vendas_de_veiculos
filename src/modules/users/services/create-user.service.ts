@@ -1,11 +1,13 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import { ConflictException, Injectable, Inject } from '@nestjs/common';
 import { IUserRepository } from '../repositories/user.repository.interface';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { PasswordHasherService } from 'src/providers/password-hasher.provider';
+import { USER_REPOSITORY } from '../repositories/user.repository.interface';
 
 @Injectable()
 export class CreateUserService {
   constructor(
+    @Inject(USER_REPOSITORY)
     private readonly userRepository: IUserRepository,
     private readonly passwordHasherService: PasswordHasherService,
   ) {}
