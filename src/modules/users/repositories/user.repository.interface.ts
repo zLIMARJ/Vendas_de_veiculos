@@ -3,4 +3,5 @@ import { User } from '../entities/user.entity';
 
 export interface IUserRepository {
   create(dto: CreateUserDto): Promise<User>;
+  findByEmail(email: string): Promise<User | null>;
 }
