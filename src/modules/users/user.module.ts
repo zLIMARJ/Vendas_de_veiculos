@@ -19,5 +19,6 @@ import { USER_REPOSITORY } from './repositories/user.repository.interface';
       useClass: UserRepository,
     },
   ],
+  exports: [USER_REPOSITORY],
 })
 export class UsersModule {}
