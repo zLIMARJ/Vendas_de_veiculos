@@ -11,6 +11,7 @@ import { AuthModule } from './modules/auth/auth.module';
       isGlobal: true,
     }),
     UsersModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
